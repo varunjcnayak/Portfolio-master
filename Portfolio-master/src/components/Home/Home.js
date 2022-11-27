@@ -4,7 +4,8 @@ import homeLogo from "../../Assets/home-main.svg";
 import Particle from "../Particle";
 import Home2 from "./Home2";
 import Type from "./Type";
-
+import "./jst.css";
+import {motion}  from "framer-motion";
 function Home() {
   return (
     <section>
@@ -19,7 +20,7 @@ function Home() {
                   👋🏻
                 </span>
               </h1>
-
+              
               <h1 className="heading-name">
                 I'M
                 <strong className="main-name"> Varun Nayak K</strong>
@@ -41,9 +42,12 @@ function Home() {
           </Row>
         </Container>
       </Container>
+      
+		  
       <Home2 />
-    </section>
     
+    </section>
+      
   );
 }
 
