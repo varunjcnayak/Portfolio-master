@@ -11,13 +11,15 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/$
 const fileId = "1_FyGbv81koURCfVChApBkBpw_CuUzSRQ"; // Replace with your actual Google Drive file ID
 const apiKey = "AIzaSyCOQuG8oYhvXY6Q043W3yrMbfq-vQmOHDs"
 const googleDriveAPI = `https://www.googleapis.com/drive/v3/files/${fileId}`;
-
+const linkGit = "https://github.com/varunjcnayak/Portfolio-master/blob/master/Portfolio-master/src/Assets/VarunResumeAug.pdf";
 function ResumeNew() {
   const [pdfLink, setPdfLink] = useState("");
+  const [pdfLinkGit,setPdfLinkGit] = useState("");
   const [width, setWidth] = useState(1200);
 
   useEffect(() => {
     setWidth(window.innerWidth);
+    setPdfLinkGit(linkGit);
     fetchPdfLink();
   }, []);
 
@@ -41,7 +43,7 @@ function ResumeNew() {
         <Row style={{ justifyContent: "center", position: "relative" }}>
           <Button
             variant="primary"
-            href={pdfLink}
+            href={pdfLinkGit}
             target="_blank"
             style={{ maxWidth: "250px" }}
           >
@@ -52,7 +54,7 @@ function ResumeNew() {
 
         <Row className="resume">
           <Document
-            file={pdfLink}
+            file={pdfLinkGit}
             className="d-flex justify-content-center"
           >
             <Page pageNumber={1} scale={width > 786 ? 1.7 : 0.6} />
@@ -62,7 +64,7 @@ function ResumeNew() {
         <Row style={{ justifyContent: "center", position: "relative" }}>
           <Button
             variant="primary"
-            href={pdfLink}
+            href={pdfLinkGit}
             target="_blank"
             style={{ maxWidth: "250px" }}
           >

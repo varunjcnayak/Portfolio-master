@@ -22,7 +22,7 @@ function Home2() {
               I fell in love with programming and I have at least learnt
               something, I think… 🤷‍♂️
               <br />
-              <br />Launguages I mess around with on regular are 
+              <br />Languages I mess around with on regular are 
               <i>
                 <b className="purple"> C++, Javascript and Python. </b>
               </i>

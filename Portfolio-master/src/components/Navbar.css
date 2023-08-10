@@ -1,0 +1,20 @@
+.logo-container {
+    display: inline-block;
+    position: relative;
+    transition: transform 0.3s;
+  }
+  
+  .logo {
+    width: 200px; /* Adjust the initial size */
+    height: auto;
+    transition: width 0.3s;
+  }
+  
+  .logo-container:hover {
+    transform: scale(2.2); /* Scale up on hover */
+  }
+  
+  .logo-container:hover .logo {
+    width: 320px; /* Increase width on hover */
+  }
+  
