@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
@@ -8,10 +8,23 @@ import oracleERP from "../../Assets/Projects/oracle_erp_cloud.png";
 import bloodbank from "../../Assets/Projects/bloodbank.png";
 import suicide from "../../Assets/Projects/suicide.png";
 import instaclone from "../../Assets/Projects/instaclone.jpg";
-
+import Preloader from "./Preload";
 function Projects() {
+  const [load, upadateLoad] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      upadateLoad(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
+
     <Container fluid className="project-section">
+       {load ? (<Preloader load={load} />) : (
+        <>
       <Particle />
       <Container>
         <h1 className="project-heading">
@@ -28,7 +41,7 @@ function Projects() {
               title="Blood Bank Website"
               description="Real-Time Blood Bank Website with 2 factor authentication and notifier based on nearby radius."
               ghLink="https://github.com/varunjcnayak/Blood_Bank"
-              
+
             />
           </Col>
 
@@ -39,7 +52,7 @@ function Projects() {
               title="Instagram Clone"
               description="Instagram Clone Built using ReactJS and tailwind CSS and deployed on FireBase. Allows Like, Comment and Direct Message after signing up => signing in"
               demoLink="https://instagram-clone-react1-87a50.web.app/"
-              
+
             />
           </Col>
 
@@ -49,13 +62,15 @@ function Projects() {
               isBlog={false}
               title="Oracle ERP"
               description="ERP solutions to client using Oracle VBCS, PL/SQL and Oracle SaaS"
-                            
+
             />
           </Col>
 
-          
+
         </Row>
-      </Container>
+      </Container> 
+      </>
+      )}
     </Container>
   );
 }
